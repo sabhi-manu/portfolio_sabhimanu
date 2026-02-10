@@ -3,11 +3,12 @@ import { ProfileImg } from '../assets'
 import { FaUserAlt } from 'react-icons/fa'
 import { MdOutlineAlternateEmail, MdWifiCalling2 } from 'react-icons/md'
 import { BsWhatsapp } from 'react-icons/bs'
+import { IoNewspaperOutline } from "react-icons/io5";
 
 const About = () => {
     return (
         <div className='w-full flex flex-col lg:flex-row px-8 md:px-10 gap-10 lg:gap-20 lg:py-20 '>
-            <div className='w-full md:h-[290px] lg:w-1/3 flex flex-col items-center border border-gray-500 dark:bg-transparent rounded-md overflow-hidden'>
+            <div className='w-[300px] md:h-[290px] lg:w-1/3 flex flex-col items-center border border-gray-500 dark:bg-transparent rounded-md overflow-hidden'>
                 <img
                     src={ProfileImg}
                     className='h-full w-full object-cover p-1 rounded-md ease-in-out duration-300 hover:scale-125'
@@ -33,9 +34,11 @@ const About = () => {
                     <p className='flex gap-3 items-center justify-center rounded-full shadow-lg py-2 px-4 bg-[#030a1c] text-white cursor-pointer'>
                         <FaUserAlt size={14} />Sabhimnau Patel
                     </p>
+                     <a href="#email">
                     <p className='flex gap-3 items-center justify-center rounded-full shadow-lg py-2 px-4 bg-[#030a1c] text-white cursor-pointer'>
-                        <MdOutlineAlternateEmail size={14} /> sabhimanu707@gmail.com
+                       <MdOutlineAlternateEmail size={14} /> sabhimanu707@gmail.com
                     </p>
+                    </a>
                     <a
                         href='https://wa.me/+917898766708'
                         className='flex gap-3 items-center justify-center rounded-full shadow-lg py-2 px-4 bg-[#030a1c] text-white cursor-pointer'
@@ -43,7 +46,7 @@ const About = () => {
                         <BsWhatsapp size={14} /> +91 7898766708
                     </a>
                     <p className='flex gap-3 items-center justify-center rounded-full shadow-lg py-2 px-4 bg-[#030a1c] text-white cursor-pointer'>
-                        <MdWifiCalling2 size={14} /> +154 3656 899
+                        <IoNewspaperOutline size={14} /> Resume
                     </p>
                 </div>
             </div>

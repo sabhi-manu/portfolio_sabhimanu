@@ -24,3 +24,5 @@ export { default as social } from "./work/social.png";
 
 export { default as Profile } from "./profile.png";
 export { default as ProfileImg } from "./profileImg.png";
+export {default as CoderImg} from "./coder.svg"
+export {default as ContactMeImg} from "./contact-me.svg"

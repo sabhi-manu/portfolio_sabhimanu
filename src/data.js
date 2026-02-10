@@ -16,6 +16,7 @@ import {
   port2,
   port3,
   social,
+  Redux
 } from "./assets";
 
 
@@ -37,10 +38,10 @@ export const tools = [
     name: "NodeJs",
     icon: Nodejs,
   },
-  {
-    name: "NextJs",
-    icon: Nextjs2,
-  },
+  // {
+  //   name: "NextJs",
+  //   icon: Nextjs2,
+  // },
 ];
 
 export const skills = [
@@ -76,59 +77,66 @@ export const skills = [
     icon: Javascript,
   },
  
+  {
+    name: "Redux",
+    value: 88,
+    icon: Redux,
+  },
+ 
 ];
 
 export const projects = [
   {
     id: 1,
     title: "Admin Dashboard",
-    cat: "Web Design",
-    url: "",
+    description: "A responsive admin dashboard UI with charts, statistics cards, and user management sections designed for modern web applications.",
+    sourceCode: "",
     img: admin,
+    liveLink: ''
   },
   {
     id: 2,
     title: "Portfolio Website",
-    cat: "Web Design",
-    url: "",
+    description: "A clean and modern personal portfolio website showcasing projects, skills, and contact information with smooth UI design.",
+    sourceCode: "",
     img: port1,
+    liveLink: ''
   },
   {
     id: 3,
     title: "Portfolio Website",
-    cat: "Web Design",
-    url: "",
+    description: "A creative portfolio layout focused on visual presentation, animations, and responsive design for personal branding.",
+    sourceCode: "",
     img: port2,
+    liveLink: ''
   },
   {
     id: 4,
     title: "MTS Website",
-    cat: "Web Design",
-    url: "",
+    description: "A professional business website design for MTS, featuring service sections, structured layouts, and responsive components.",
+    sourceCode: "",
     img: port3,
+    liveLink: ''
   },
   {
     id: 5,
     title: "Eat Well Website",
-    cat: "Web Design",
-    url: "",
+    description: "A food and restaurant themed website with attractive layouts, menu sections, and a user-friendly design experience.",
+    sourceCode: "",
     img: food,
+    liveLink: ''
   },
   {
     id: 6,
     title: "Social Media",
     cat: "Web App",
-    url: "",
+    description: "A social media web application interface with user profiles, posts feed, and interactive UI elements.",
+    sourceCode: "",
     img: social,
-  },
-  {
-    id: 7,
-    title: "Eat Well App",
-    cat: "Mobile App",
-    url: "",
-    img: food1,
+    liveLink: ''
   },
 ];
+
 
 export const softskills = [
   "Time management",

@@ -3,11 +3,7 @@ import { FiSun } from "react-icons/fi";
 import { MdNightlight } from "react-icons/md";
 import { BiMenu } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
-import Header from "./Header";
-import Project from "./Project";
-import About from "./About";
-import Skills from "./Skills";
-import Works from "./Works";
+
 
 const NavBar = ({ darkMode, isOpen, toggleMenu, toggleTheme }) => {
   return (
@@ -67,32 +63,7 @@ const NavBar = ({ darkMode, isOpen, toggleMenu, toggleTheme }) => {
         </div>
       </div>
 
-      <section id="home" className="px-0 lg:px-5 py-10 lg:py-2 ">
-        <Header />{" "}
-      </section>
-      <section id="home" className="w-full bg-[#061130] py-20 border">
-        <Project />{" "}
-      </section>
-      <section
-        id="about"
-        className="w-full px-0 lg:px-5 2xl:px-40 py-10 lg:py-0 dark:bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#030a1c] to-[#05174e] border"
-      >
-        <About />
-      </section>
-
-      <section
-        id="skills"
-        className="w-full px-0 lg:px-5 2xl:px-40 py-10 lg:py-0 dark:bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#05174e] to-[#030a1c] border"
-      >
-        <Skills />
-      </section>
-      
-        <section
-          id='projects'
-          className='w-full px-0 lg:px-5 2xl:px-40 py-10 lg:py-0 dark:bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#030a1c] to-[#05174e] border'
-        >
-          <Works />
-        </section>
+     
       
     </div>
   );

@@ -26,21 +26,23 @@ const Header = () => {
                     rapidly changing environments and compositions.
                 </p>
                 <div className='mt-10 flex gap-10'>
-                    <button className='text-lg font-medium bg-orange-700 rounded-md px-5 py-3 text-white'>About Me</button>
+                   <a href="#email">
+                     <button className='text-lg font-medium bg-orange-700 rounded-md px-5 py-3 text-white'>Hire Me</button>
+                   </a>
                     <a href="#project">
                         <button className='text-lg text-white fonnt-semibold rounded-md py-3 px-5 bg-orange-500 '>Project</button>
                     </a>
                 </div>
             </div>
 
-            <div className='border rounded-full border-gray-500 dark:border-gray-200 w-[300px] h-[300px] relative  '>
-                <img  className='w-full h-full rounded-full object-cover absolute ' src={ProfileImg} alt="profleImage" />
-                <div className='relative w-full h-full rounded-full'>
+            <div className='border rounded-full border-gray-500 dark:border-gray-200 w-[300px] h-[300px] relative overflow-hidden '>
+                <img  className='w-full h-full rounded-full object-cover absolute hover:scale-125 duration-500 ' src={ProfileImg} alt="profleImage" />
+                {/* <div className='relative w-full h-full rounded-full'>
                     <img src={Mongodb} alt="reactImg" className='w-16  h-16  absolute top-7 left-0 ' />
                     <img src={Nodejs} alt="reactImg" className='w-16  h-16  absolute top-7 right-0 ' />
                     <img src={Reactjs} alt="reactImg" className='w-16  h-16  absolute bottom-7 left-0 ' />
                     <img src={Redux} alt="reactImg" className='w-16  h-16  absolute bottom-7 right-0 ' />
-                </div>
+                </div> */}
             </div>
         </div>
     )
