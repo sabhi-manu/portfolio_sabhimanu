@@ -39,7 +39,7 @@ const Email = () => {
         {/* Form */}
         <div className="w-full md:w-1/2">
           <form method="POST" name="contact"  data-netlify="true" className="flex flex-col gap-4 bg-white dark:bg-[#04133e] 
-                           p-6 rounded-xl shadow-lg" >
+                           p-6 rounded-xl shadow-lg" action="/success" >
             <input type="hidden" name="form-name" value="contact" />
             <input
               type="text"
