@@ -25,15 +25,15 @@ const Footer = () => {
         </p>
 
         <div className="flex gap-10 text-black text-2xl mb-5 dark:text-white">
-        <a href="">
+        <a href="https://github.com/sabhi-manu">
 
           <FaGithub className="hover:scale-125" />
         </a>
         <a href="">
 
           <BsInstagram className="hover:scale-125" />
-        </a>
-        <a href="">
+        </a> 
+        <a href="https://www.linkedin.com/in/sabhimanupatel">
 
           <BsLinkedin className="hover:scale-110" />
         </a>

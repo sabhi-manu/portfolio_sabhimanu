@@ -5,8 +5,9 @@ import Email from "./components/Email";
 import Works from "./components/Works";
 import Skills from "./components/Skills";
 import About from "./components/About";
-import Project from "./components/Project";
+import Tools from "./components/Tools";
 import Header from "./components/Header";
+import Experience from "./components/Experience";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -34,7 +35,7 @@ const App = () => {
             <Header />{" "}
           </section>
           <section id="home" className="w-full bg-[#061130] py-20 border">
-            <Project />{" "}
+            <Tools />{" "}
           </section>
           <section
             id="about"
@@ -48,6 +49,12 @@ const App = () => {
             className="w-full px-0 lg:px-5 2xl:px-40 py-10 lg:py-0 dark:bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#05174e] to-[#030a1c] border"
           >
             <Skills />
+          </section>
+          <section
+            id="skills"
+            className="w-full px-0 lg:px-5 2xl:px-40 py-10 lg:py-0 dark:bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#05174e] to-[#030a1c] border"
+          >
+            <Experience />
           </section>
 
           <section
