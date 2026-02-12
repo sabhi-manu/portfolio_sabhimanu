@@ -55,7 +55,7 @@ const Email = () => {
 
         {/* Form */}
         <div className="w-full md:w-1/2">
-          <form method="POST" data-netlify="true" className="flex flex-col gap-4 bg-white dark:bg-[#04133e] 
+          <form method="POST" name="contact" netlify className="flex flex-col gap-4 bg-white dark:bg-[#04133e] 
                            p-6 rounded-xl shadow-lg" onSubmit={submitHandler}>
             
             <input
