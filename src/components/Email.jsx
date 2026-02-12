@@ -15,24 +15,7 @@ const Email = () => {
       [name]: value,
     }));
   };
-   const submitHandler = (e) => {
-    e.preventDefault();
 
-    // basic validation
-    if (!data.name || !data.email || !data.text) {
-      alert("Please fill all fields");
-      return;
-    }
-
-    console.log("Form Data:", data);
-
-    // reset form
-    setData({
-      name: "",
-      email: "",
-      text: "",
-    });
-  };
   return (
     <section className="w-full flex flex-col items-center gap-10 py-16">
       {/* Heading */}
@@ -55,9 +38,9 @@ const Email = () => {
 
         {/* Form */}
         <div className="w-full md:w-1/2">
-          <form method="POST" name="contact" netlify className="flex flex-col gap-4 bg-white dark:bg-[#04133e] 
-                           p-6 rounded-xl shadow-lg" onSubmit={submitHandler}>
-            
+          <form method="POST" name="contact"  data-netlify="true" className="flex flex-col gap-4 bg-white dark:bg-[#04133e] 
+                           p-6 rounded-xl shadow-lg" >
+            <input type="hidden" name="form-name" value="contact" />
             <input
               type="text"
               name="name"
