@@ -34,9 +34,11 @@ const App = () => {
           <section id="home" className="px-0 lg:px-5 py-10 lg:py-2 ">
             <Header />{" "}
           </section>
-          <section id="home" className="w-full bg-[#061130] py-20 border">
+          {/* <section  className="w-full bg-[#061130] py-20 border">
             <Tools />{" "}
-          </section>
+          </section> */}
+
+          
           <section
             id="about"
             className="w-full px-0 lg:px-5 2xl:px-40 py-10 lg:py-0 dark:bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#030a1c] to-[#05174e] border"
@@ -51,7 +53,8 @@ const App = () => {
             <Skills />
           </section>
           <section
-            id="skills"
+            // id="skills"
+            id="experience"
             className="w-full px-0 lg:px-5 2xl:px-40 py-10 lg:py-0 dark:bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#05174e] to-[#030a1c] border"
           >
             <Experience />

@@ -3,17 +3,17 @@ import { experienceData } from "../data";
 
 const Experience = () => {
   return (
-    <section className="py-16 px-6 md:px-20 bg-gray-50 dark:bg-[#0f172a] transition-colors duration-300">
+    <div className="py-16 px-6 md:px-20">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
         Experience
       </h2>
 
-      <div className="space-y-10">
+      <div className="space-y-10 max-w-[1000px] mx-auto">
         {experienceData.map((exp) => (
           <div
             key={exp.id}
-            className="p-6 md:p-8 rounded-2xl shadow-md 
-                       bg-white dark:bg-[#1e293b] 
+            className="p-6 md:p-8 rounded-2xl shadow-md
+                       bg-white dark:bg-[#1e293b]
                        border border-gray-200 dark:border-gray-700
                        hover:shadow-xl hover:-translate-y-1
                        transition-all duration-300"
@@ -29,7 +29,7 @@ const Experience = () => {
                 </p>
               </div>
 
-              <div className="text-sm text-gray-500 dark:text-gray-400 mt-2 md:mt-0">
+              <div className="text-sm text-gray-500 dark:text-gray-400 mt-2 md:mt-0 md:text-right">
                 <p>{exp.duration}</p>
                 <p>{exp.location}</p>
               </div>
@@ -49,8 +49,8 @@ const Experience = () => {
               {exp.technologies.map((tech, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 text-sm rounded-full 
-                             bg-gray-200 dark:bg-gray-700 
+                  className="px-3 py-1 text-sm rounded-full
+                             bg-gray-200 dark:bg-gray-700
                              text-gray-800 dark:text-gray-200
                              hover:bg-blue-500 hover:text-white
                              transition-colors duration-300 cursor-default"
@@ -62,7 +62,7 @@ const Experience = () => {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 

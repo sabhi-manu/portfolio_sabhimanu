@@ -9,8 +9,24 @@ import {
   Redux,
   chatAppImg,
   portfolioImg,
-  youTubeImg
+  youTubeImg,
+ memorbitImg
+ 
 } from "./assets";
+
+
+ 
+
+
+import {
+  FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaAws, FaGitAlt, FaGithub,
+} from "react-icons/fa";
+import {
+  SiNextdotjs, SiRedux, SiTailwindcss, SiExpress, SiMongodb, SiRedis,
+  SiPostman, SiJsonwebtokens,
+} from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import { MdApi, MdQueue } from "react-icons/md";
 
 
 
@@ -78,46 +94,92 @@ export const skills = [
 export const projects = [
   {
     id: 1,
-    title: "YouTube Clone",
-    description: "A fully responsive YouTube clone built with modern web technologies featuring video browsing, search functionality, authentication, and dynamic video playback using API integration.",
-    sourceCode: "https://github.com/sabhi-manu/youTube-client",
-    img: youTubeImg,
-    liveLink: 'https://you-tube-client-orpin.vercel.app/'
+    title: "Memorbit: Travel Story App",
+    description:
+      "MERN travel story app with JWT authentication and image upload to a private S3 bucket. Deployed on AWS with a custom VPC, ALB, CloudFront, Auto Scaling and CloudWatch alerts.",
+    tech: ["React", "Node.js", "MongoDB", "AWS"],
+    sourceCode: "https://github.com/sabhi-manu/Memorbit",
+    img: memorbitImg,
+    liveLink: "https://app.sabhimanu.cyou",
   },
   {
     id: 2,
-    title: "Real-Time Chat Application",
-    description: "A real-time chat application that allows users to send and receive instant messages with authentication, user management, and dynamic message updates using modern full-stack technologies.",
-    sourceCode: "https://github.com/sabhi-manu/db_chat_app",
-    img: chatAppImg,
-    liveLink: 'https://db-chat-appfrontend.vercel.app/'
+    title: "StreamHub: Video Streaming Platform",
+    description:
+      "Full-stack video streaming platform with JWT authentication, background jobs for video processing and email notifications, and Cloudinary media storage.",
+    tech: ["React", "Express", "MongoDB", "Redis", "BullMQ"],
+    sourceCode: "https://github.com/sabhi-manu/youTube_backend",
+    img: youTubeImg,
+    liveLink: "https://you-tube-client-orpin.vercel.app/",
   },
-  {
-    id: 3,
-    title: "Portfolio Website",
-    description: "A modern and responsive personal portfolio website designed to showcase projects, skills, and contact information with clean UI, smooth layout, and strong personal branding focus.",
-    sourceCode: "https://github.com/sabhi-manu/portfolio_sabhimanu",
-    img: portfolioImg,
-    liveLink: ''
-  },
+ 
 ];
-
 
 export const experienceData = [
   {
     id: 1,
     role: "Full Stack Developer Intern",
-    company: "Sheryians Private Limited ",
+    company: "Sheryians Private Limited",
     employmentType: "Internship",
     location: "Bhopal, India",
-    duration: "Nov 2025 - Jan 2026",
-    technologies: ["React", "Node.js", "Express", "MongoDB"],
+    duration: "Nov 2025 - Feb 2026",
+    technologies: ["React", "Next.js", "Node.js", "Express", "MongoDB", "Redis"],
     responsibilities: [
-      "Developed full-stack web applications using MERN stack.",
-      "Built REST APIs and integrated frontend with backend.",
-      "Implemented JWT authentication and role-based access.",
-      "Collaborated with team members using Git and GitHub."
+      "Reduced API response latency from 3s to 100ms by implementing Redis caching and message queues for low-priority tasks.",
+      "Built Next.js (CSR) applications with TanStack React Query, reducing redundant API calls through caching and background refetching.",
+      "Designed a repository-pattern backend so the data layer can be swapped without changing business logic.",
+      "Resolved N+1 query issues using MongoDB aggregation pipelines and reference-based schema design.",
+      "Built Node.js background workers and strengthened API reliability with request validation and rate limiting."
     ]
   },
- 
+];
+
+
+export const skillCategories = [
+  {
+    title: "Frontend",
+    items: [
+      { name: "React.js", icon: FaReact, color: "#61DAFB" },
+      { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+      { name: "Redux Toolkit", icon: SiRedux, color: "#764ABC" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
+      { name: "HTML5", icon: FaHtml5, color: "#E34F26" },
+      { name: "CSS3", icon: FaCss3Alt, color: "#1572B6" },
+      { name: "JavaScript", icon: FaJs, color: "#F7DF1E" },
+    ],
+  },
+  {
+    title: "Backend",
+    items: [
+      { name: "Node.js", icon: FaNodeJs, color: "#68A063" },
+      { name: "Express.js", icon: SiExpress, color: "#FFFFFF" },
+      { name: "REST APIs", icon: MdApi, color: "#22D3EE" },
+      { name: "JWT Authentication", icon: SiJsonwebtokens, color: "#F472B6" },
+    ],
+  },
+  {
+    title: "Database",
+    items: [
+      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      { name: "Redis", icon: SiRedis, color: "#DC382D" },
+    ],
+  },
+  {
+    title: "Cloud",
+    items: [{ name: "AWS", icon: FaAws, color: "#FF9900" }],
+    tags: [
+      "EC2", "Auto Scaling", "ALB", "VPC", "S3", "CloudFront",
+      "IAM", "Route 53", "CloudWatch",
+    ],
+  },
+  {
+    title: "Tools",
+    items: [
+      { name: "Git", icon: FaGitAlt, color: "#F05032" },
+      { name: "GitHub", icon: FaGithub, color: "#FFFFFF" },
+      { name: "Postman", icon: SiPostman, color: "#FF6C37" },
+      { name: "VS Code", icon: VscVscode, color: "#007ACC" },
+      { name: "BullMQ", icon: MdQueue, color: "#F97316" },
+    ],
+  },
 ];

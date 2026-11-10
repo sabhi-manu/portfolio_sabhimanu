@@ -17,6 +17,7 @@ export { default as Python } from "./python.svg";
 export {default as chatAppImg} from "./work/chatAppImg.png"
 export {default as youTubeImg} from "./work/youTubeImg.png"
 export {default as portfolioImg} from "./work/portfolioImg.png"
+export {default as memorbitImg} from "./work/memorbitImg.png"
 
 
 export { default as ProfileImg } from "./profileImg.png";
