@@ -5,7 +5,7 @@ import Email from "./components/Email";
 import Works from "./components/Works";
 import Skills from "./components/Skills";
 import About from "./components/About";
-import Tools from "./components/Tools";
+
 import Header from "./components/Header";
 import Experience from "./components/Experience";
 
@@ -34,9 +34,7 @@ const App = () => {
           <section id="home" className="px-0 lg:px-5 py-10 lg:py-2 ">
             <Header />{" "}
           </section>
-          {/* <section  className="w-full bg-[#061130] py-20 border">
-            <Tools />{" "}
-          </section> */}
+         
 
           
           <section

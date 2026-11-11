@@ -1,62 +1,57 @@
 import React, { useState } from "react";
 import { ContactMeImg } from "../assets";
 
+const encode = (data) =>
+  Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+
 const Email = () => {
-  const [data, setData] = useState({
-    name: "",
-    email: "",
-    text: "",
-  });
-
+  const [data, setData] = useState({ name: "", email: "", text: "" });
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null); // { type: "success" | "error", msg: string }
 
-  // Update state when inputs change
   const textHandler = (e) => {
     const { name, value } = e.target;
-    setData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Encode data for x-www-form-urlencoded
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-  };
-
-  // Handle form submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setStatus(null);
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...data }),
-    })
-      .then(() => {
-        alert("Success! Your message has been sent.");
-        setData({ name: "", email: "", text: "" }); // clear form
-      })
-      .catch((error) => alert("Error: " + error))
-      .finally(() => setLoading(false));
+    try {
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...data }),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
+
+      setStatus({ type: "success", msg: "Thanks! Your message has been sent." });
+      setData({ name: "", email: "", text: "" });
+    } catch (err) {
+      setStatus({
+        type: "error",
+        msg: "Something went wrong. Please email me at sabhimanu707@gmail.com.",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
+  const inputClass =
+    "p-3 rounded-md border border-gray-300 dark:border-gray-600 bg-transparent text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500";
+
   return (
-    <section className="w-full flex flex-col items-center gap-10 py-16">
-      {/* Heading */}
-      <h2 className="text-3xl font-bold border border-black dark:border-white 
-                     px-6 py-2 text-black dark:text-white">
+    <div className="w-full flex flex-col items-center gap-10 py-16">
+      <h2 className="text-3xl font-bold border border-black dark:border-white px-6 py-2 text-black dark:text-white">
         Let’s Connect
       </h2>
 
-      {/* Content */}
       <div className="flex flex-col md:flex-row items-center gap-10 max-w-5xl w-full px-4">
-        {/* Image */}
         <div className="w-full md:w-1/2 flex justify-center">
           <img
             src={ContactMeImg}
@@ -65,17 +60,22 @@ const Email = () => {
           />
         </div>
 
-        {/* Form */}
         <div className="w-full md:w-1/2">
           <form
             name="contact"
             onSubmit={handleSubmit}
-            data-netlify="true"
-            className="flex flex-col gap-4 bg-white dark:bg-[#04133e] 
-                       p-6 rounded-xl shadow-lg"
+            className="flex flex-col gap-4 bg-white dark:bg-[#04133e] p-6 rounded-xl shadow-lg"
           >
-            {/* Hidden field for Netlify */}
             <input type="hidden" name="form-name" value="contact" />
+
+            {/* Honeypot: hidden from people, filled in by spam bots */}
+            <input
+              type="text"
+              name="bot-field"
+              tabIndex="-1"
+              autoComplete="off"
+              className="hidden"
+            />
 
             <input
               type="text"
@@ -84,9 +84,7 @@ const Email = () => {
               value={data.name}
               onChange={textHandler}
               required
-              className="p-3 rounded-md border border-gray-300 dark:border-gray-600
-                         bg-transparent text-black dark:text-white
-                         focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className={inputClass}
             />
 
             <input
@@ -96,9 +94,7 @@ const Email = () => {
               value={data.email}
               onChange={textHandler}
               required
-              className="p-3 rounded-md border border-gray-300 dark:border-gray-600
-                         bg-transparent text-black dark:text-white
-                         focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className={inputClass}
             />
 
             <textarea
@@ -108,24 +104,35 @@ const Email = () => {
               onChange={textHandler}
               rows="4"
               required
-              className="p-3 rounded-md border border-gray-300 dark:border-gray-600
-                         bg-transparent text-black dark:text-white
-                         focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+              className={`${inputClass} resize-none`}
             ></textarea>
 
             <button
               type="submit"
               disabled={loading}
-              className={`mt-2 bg-blue-600 hover:bg-blue-700 text-white
-                          py-3 rounded-md font-semibold transition duration-300
-                          ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+              className={`mt-2 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-semibold transition duration-300 ${
+                loading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
             >
               {loading ? "Sending..." : "Send Message"}
             </button>
+
+            {status && (
+              <p
+                role="status"
+                className={`text-sm ${
+                  status.type === "success"
+                    ? "text-green-600 dark:text-green-400"
+                    : "text-red-600 dark:text-red-400"
+                }`}
+              >
+                {status.msg}
+              </p>
+            )}
           </form>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
